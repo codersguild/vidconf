@@ -40,8 +40,8 @@ function App() {
               roomName={roomName} 
               displayName={displayName} 
               password={password}
+              // domain="link-to-hosted-jitsi-meet-server"
               onAPILoad={handleAPI}
-              domain="jitsi.nerdonthestreet.com"
               containerStyle={{ 
                 width: width / 1.5, 
                 height: height / 1.5
