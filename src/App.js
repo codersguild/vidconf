@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Jitsi from 'react-jitsi'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import useWindowDimensions from './useWindowDimensions'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import jitsi_logo from './assets/Poweredby_Jitsi_logo_grey_horizontal_genie_04_2020_grey.png'
 import './App.css';
 
 const handleAPI = (JitsiMeetAPI) => {
@@ -28,8 +31,30 @@ function App() {
   const [onCall, setOnCall] = useState(false)
   const { height, width } = useWindowDimensions();
 
+  useEffect(() => {
+    toast.success("Welcome to VidConf 😍")
+    setTimeout(() => {
+      toast.info("Fill in your details and get rolling 🔥")
+    }, 2500)
+
+    return (() => {
+      toast.success("See you soon !")
+    })
+  }, [])
+
   return (
     <div className="App">
+      <ToastContainer 
+        position="top-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <header className="App-header">
         <>
           <h2>VidConf <Emoji symbol="🚀"/></h2>
@@ -90,10 +115,13 @@ function App() {
                 color="secondary" 
                 size="large"
                 onClick={() => {
-                  if(roomName === "") alert("Give your Room a hip-hop name");
-                  else if(displayName === "") alert("Enter your name");
-                  else if(password === "") alert("Secure your meeting by adding a password.");
-                  else setOnCall(true)
+                  if(roomName === "") toast.error("Give your Room a hip-hop name 🤓");
+                  else if(displayName === "") toast.error("Enter your name 😢");
+                  else if(password === "") toast.error("Secure your meeting by adding a password. 😎");
+                  else {
+                    toast.success("Starting Meeting Now 🔥🔥")
+                    setOnCall(true)
+                  } 
                 }}
               > Start<Emoji symbol="👍"/> 
               </Button>
@@ -103,6 +131,13 @@ function App() {
           }
         </>
       </header>
+      <a href="https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-quickstart">
+        <img 
+          src={jitsi_logo}
+          width="190"
+          height="60"  
+        />
+      </a>
     </div>
   );
 }
