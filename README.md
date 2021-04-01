@@ -2,6 +2,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/afc8112f-3eea-4419-a850-e860b251726c/deploy-status)](https://app.netlify.com/sites/vidconf/deploys)
 
+## Jitsi Meet Server : 
+
+Spin up a `Jitsi-Meet` server and specify it in the `doamin` field in `src/App.js`, check for commented line `domain="link-to-hosted-jitsi-meet-server"`. This is just a frontend to a hosted `Jitsi-Meet` server service.
+
 ## Available Scripts
 
 In the project directory, you can run:
