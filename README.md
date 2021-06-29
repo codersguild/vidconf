@@ -6,6 +6,8 @@
 
 Spin up a `Jitsi-Meet` server and specify it in the `doamin` field in `src/App.js`, check for commented line `domain="link-to-hosted-jitsi-meet-server"`. This is just a frontend to a hosted `Jitsi-Meet` server service.
 
+[What is Jitsi-Meet? Architecture Overview](https://jitsi.github.io/handbook/docs/architecture)
+
 ## Available Scripts
 
 In the project directory, you can run:
